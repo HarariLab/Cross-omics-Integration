@@ -9,7 +9,7 @@ library(RColorBrewer)
 library(VennDiagram)
 
 ###########################################################################
-## extract shared metaboloties between discovery and replicates  
+## extract shared metaboloties between Knight ADRC and ROSMAP  
 ###########################################################################
 rosmap.clin <- unique(read.csv('/40/Public_Data/bulkRNASeq/201506_ROSMAP/Gene_Expression/03.-Phenotype/new/2020_12_01_ROSMAP_clinical.csv', sep=",", header =T, stringsAsFactors = F))
 
@@ -281,8 +281,9 @@ rbind(CO=inc.metab.CO[inc.metab.CO$Metab.name==mm, c('Metab.name', 'KnightADRC_e
       OT=inc.metab.OT[inc.metab.OT$Metab.name==mm, c('Metab.name', 'KnightADRC_effect', 'ROSMAP_effect', 'KnightADRC_pvalue', 'ROSMAP_pvalue')])
 
 
-##########################################################################################
-##### Plot Supplementary Figures ########################
+##########################################################
+##### Plot Supplementary Figures 
+#########################################################
 # Knight ADRC 
 ## read cluster solution
 bb1 <- read.table("omics_integration/iCluster_output/best.cluster.memership_v1_full.tsv", header = T, sep="\t", stringsAsFactors = F)
